@@ -1,0 +1,71 @@
+User
+
+Registrazione di un nuovo utente
+
+Login (autenticazione)
+
+Visualizzare i dettagli del profilo utente
+
+Modificare i dati personali dell’utente
+
+Visualizzare gli ordini effettuati dall’utente
+
+Aggiungere, modificare, eliminare indirizzi associati all’utente
+
+Product
+
+Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria, prezzo, ecc.)
+
+Visualizzare i dettagli di un singolo prodotto
+
+Aggiungere un nuovo prodotto (funzionalità admin)
+
+Modificare i dati di un prodotto esistente (admin)
+
+Eliminare un prodotto (admin)
+
+Visualizzare le recensioni associate a un prodotto
+
+Category
+
+Elencare tutte le categorie di prodotto
+
+Visualizzare i dettagli di una categoria e i prodotti associati
+
+Aggiungere/modificare/eliminare categorie (admin)
+
+Cart
+
+Visualizzare il contenuto del carrello dell’utente
+
+Aggiungere un prodotto al carrello
+
+Modificare la quantità di un prodotto nel carrello
+
+Rimuovere un prodotto dal carrello
+
+Svuotare il carrello
+
+Order
+
+Creare un nuovo ordine a partire dal carrello
+
+Visualizzare i dettagli di un ordine specifico
+
+Elencare tutti gli ordini di un utente
+
+Annullare un ordine (se consentito)
+
+Payment
+
+Effettuare il pagamento di un ordine
+
+Visualizzare lo stato del pagamento
+
+Review
+
+Aggiungere una recensione a un prodotto (solo utenti autenticati)
+
+Modificare o eliminare una recensione (solo autore o admin)
+
+Visualizzare tutte le recensioni di un prodotto

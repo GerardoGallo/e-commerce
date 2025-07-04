@@ -46,6 +46,8 @@ Rimuovere un prodotto dal carrello
 
 Svuotare il carrello
 
+Wishlist (preferiti)
+
 Order
 
 Creare un nuovo ordine a partire dal carrello
@@ -55,6 +57,8 @@ Visualizzare i dettagli di un ordine specifico
 Elencare tutti gli ordini di un utente
 
 Annullare un ordine (se consentito)
+
+Notifiche email/SMS dopo l’ordine
 
 Payment
 
@@ -69,3 +73,16 @@ Aggiungere una recensione a un prodotto (solo utenti autenticati)
 Modificare o eliminare una recensione (solo autore o admin)
 
 Visualizzare tutte le recensioni di un prodotto
+
+
+
+Pannello Admin
+Dashboard con:
+
+Numero ordini totali
+
+Vendite giornaliere/mensili
+
+Prodotti più venduti
+
+Utenti attivi

@@ -1,19 +1,12 @@
 package com.gerardo.ecommerce.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.cglib.core.Local;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "orders")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Order {
 
     @Id
@@ -39,4 +32,82 @@ public class Order {
 
     @OneToOne(mappedBy = "order")
     private Payment payment;
+
+    public Order() {
+    }
+
+    public Order(int id, LocalDateTime dataOrdine, StatoOrdine statoOrdine, double prezzoOrdine, User user, Address address, List<OrderItem> orderitem, Payment payment) {
+        this.id = id;
+        this.dataOrdine = dataOrdine;
+        this.statoOrdine = statoOrdine;
+        this.prezzoOrdine = prezzoOrdine;
+        this.user = user;
+        this.address = address;
+        this.orderitem = orderitem;
+        this.payment = payment;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDataOrdine() {
+        return dataOrdine;
+    }
+
+    public void setDataOrdine(LocalDateTime dataOrdine) {
+        this.dataOrdine = dataOrdine;
+    }
+
+    public StatoOrdine getStatoOrdine() {
+        return statoOrdine;
+    }
+
+    public void setStatoOrdine(StatoOrdine statoOrdine) {
+        this.statoOrdine = statoOrdine;
+    }
+
+    public double getPrezzoOrdine() {
+        return prezzoOrdine;
+    }
+
+    public void setPrezzoOrdine(double prezzoOrdine) {
+        this.prezzoOrdine = prezzoOrdine;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<OrderItem> getOrderitem() {
+        return orderitem;
+    }
+
+    public void setOrderitem(List<OrderItem> orderitem) {
+        this.orderitem = orderitem;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
 }

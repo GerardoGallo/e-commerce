@@ -13,7 +13,9 @@ public class MapperProduct {
         entity.setDescrizione(productDtoIn.getDescrizione());
         entity.setPezziDisponibili(productDtoIn.getPezziDisponibili());
         entity.setCodeItem(productDtoIn.getCodeItem());
-        entity.setCategory(MapperCategory.dtoInToEntity(productDtoIn.getCategory()));
+        if (productDtoIn.getCategory() != null) {
+            entity.setCategory(MapperCategory.dtoInToEntity(productDtoIn.getCategory()));
+        }
         return entity;
     }
 
@@ -23,8 +25,12 @@ public class MapperProduct {
         dtoOut.setDescrizione(newProduct.getDescrizione());
         dtoOut.setPrezzo(newProduct.getPrezzo());
         dtoOut.setPezziDisponibili(newProduct.getPezziDisponibili());
-        dtoOut.setCategory(MapperCategory.entityToDtoOut(newProduct.getCategory()));
-        dtoOut.setReview(MapperReview.entityToDtoOut(newProduct.getReview()));
+        if (newProduct.getCategory() != null) {
+            dtoOut.setCategory(MapperCategory.entityToDtoOut(newProduct.getCategory()));
+        }
+        if (newProduct.getReview() != null) {
+            dtoOut.setReview(MapperReview.entityToDtoOut(newProduct.getReview()));
+        }
         return dtoOut;
     }
 }

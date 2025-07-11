@@ -18,11 +18,11 @@ Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria,
 
 Visualizzare i dettagli di un singolo prodotto
 
-Aggiungere un nuovo prodotto (funzionalità admin)
+Aggiungere un nuovo prodotto (funzionalità admin)  FATTO
 
-Modificare i dati di un prodotto esistente (admin)
+Modificare i dati di un prodotto esistente (admin) FATTO
 
-Eliminare un prodotto (admin)
+Eliminare un prodotto (admin) FATTO
 
 Visualizzare le recensioni associate a un prodotto
 
@@ -32,7 +32,7 @@ Elencare tutte le categorie di prodotto
 
 Visualizzare i dettagli di una categoria e i prodotti associati
 
-Aggiungere/modificare/eliminare categorie (admin)
+Aggiungere/modificare/eliminare categorie (admin) FATTO, inoltre per quanto riguarda la delete, essa puo essere effettuata solo se nessuno prodotto è associato a quella categoria
 
 Cart
 

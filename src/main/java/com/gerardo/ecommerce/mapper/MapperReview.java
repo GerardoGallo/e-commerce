@@ -13,12 +13,18 @@ public class MapperReview {
         dtoOut.setVoto(review.getVoto());
         dtoOut.setCommento(review.getCommento());
         dtoOut.setData(review.getData());
-        dtoOut.setProduct(MapperProduct.entityToDtoOut(review.getProduct()));
-        dtoOut.setUser(MapperUser.entityToDtoOut(review.getUser()));
+        if (review.getProduct() != null) {
+            dtoOut.setProduct(MapperProduct.entityToDtoOut(review.getProduct()));
+
+        }
+        if (review.getUser() != null) {
+            dtoOut.setUser(MapperUser.entityToDtoOut(review.getUser()));
+
+        }
         return dtoOut;
     }
 
-    public static List<ReviewDtoOut> entityToDtoOut(List<Review> listReview){
+    public static List<ReviewDtoOut> entityToDtoOut(List<Review> listReview) {
         return listReview.stream().map(MapperReview::entityToDtoOut).collect(Collectors.toList());
     }
 }

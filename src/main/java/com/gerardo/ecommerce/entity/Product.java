@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Data
-
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
@@ -22,6 +21,7 @@ public class Product {
     private int pezziDisponibili;
     private double prezzo;
     private String descrizione;
+    private int codeItem;
 
     @ManyToOne
     @JoinColumn(name = "category_id")

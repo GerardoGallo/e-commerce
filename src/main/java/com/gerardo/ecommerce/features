@@ -16,7 +16,7 @@ Product
 
 Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria, prezzo, ecc.)
 
-Visualizzare i dettagli di un singolo prodotto
+Visualizzare i dettagli di un singolo prodotto FATTO
 
 Aggiungere un nuovo prodotto (funzionalità admin)  FATTO
 
@@ -24,7 +24,7 @@ Modificare i dati di un prodotto esistente (admin) FATTO
 
 Eliminare un prodotto (admin) FATTO
 
-Visualizzare le recensioni associate a un prodotto
+Visualizzare le recensioni associate a un prodotto AVENDO GIà IL FINDBYID CHE RECUPERA TUTTE LE INFORMAZIONI DEL PRODOTTO QUESTA FEATURES DOVREBBE ESSERE AUTOMATICAMENTE GIà IMPLEMENTATA, NEL MOMENTO IN CUI VERRà FATTA LA PARTE FROTN-END VEDREMO
 
 Category
 
@@ -36,13 +36,13 @@ Aggiungere/modificare/eliminare categorie (admin) FATTO, inoltre per quanto rigu
 
 Cart
 
-Visualizzare il contenuto del carrello dell’utente
+Visualizzare il contenuto del carrello dell’utente FATTO
 
-Aggiungere un prodotto al carrello
+Aggiungere un prodotto al carrello FATTO
 
-Modificare la quantità di un prodotto nel carrello
+Modificare la quantità di un prodotto nel carrello FATTO
 
-Rimuovere un prodotto dal carrello
+Rimuovere un prodotto dal carrello FATTO
 
 Svuotare il carrello
 

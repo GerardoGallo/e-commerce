@@ -4,6 +4,8 @@ import com.gerardo.ecommerce.dto.in.ProductDtoIn;
 import com.gerardo.ecommerce.dto.out.ProductDtoOut;
 import com.gerardo.ecommerce.entity.Product;
 
+import java.util.Map;
+
 public class MapperProduct {
 
     public static Product dtoInToEntity(ProductDtoIn productDtoIn) {
@@ -19,6 +21,22 @@ public class MapperProduct {
         return entity;
     }
 
+    public static Product dtoOutToEntity(ProductDtoOut dtoOut) {
+        Product entity = new Product();
+        entity.setNome(dtoOut.getNome());
+        entity.setPrezzo(dtoOut.getPrezzo());
+        entity.setDescrizione(dtoOut.getDescrizione());
+        entity.setPezziDisponibili(dtoOut.getPezziDisponibili());
+        if (dtoOut.getCategory() != null) {
+            entity.setCategory(MapperCategory.dtoOutToEntity(dtoOut.getCategory()));
+        }
+
+        if (dtoOut.getReview() != null) {
+            entity.setReview(MapperReview.ListDtoOutToListEntity(dtoOut.getReview()));
+        }
+        return entity;
+    }
+
     public static ProductDtoOut entityToDtoOut(Product newProduct) {
         ProductDtoOut dtoOut = new ProductDtoOut();
         dtoOut.setNome(newProduct.getNome());
@@ -29,7 +47,7 @@ public class MapperProduct {
             dtoOut.setCategory(MapperCategory.entityToDtoOut(newProduct.getCategory()));
         }
         if (newProduct.getReview() != null) {
-            dtoOut.setReview(MapperReview.entityToDtoOut(newProduct.getReview()));
+            dtoOut.setReview(MapperReview.listEntityToListDtoOut(newProduct.getReview()));
         }
         return dtoOut;
     }

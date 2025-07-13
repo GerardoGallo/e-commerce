@@ -1,5 +1,6 @@
 package com.gerardo.ecommerce.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,15 +15,21 @@ public class CartItem {
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
+    @JsonIgnore
     private Cart cart;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     public CartItem() {
     }
 
-    public CartItem(int id, int quantity, Cart cart) {
+    public CartItem(int id, int quantity, Cart cart, Product product) {
         this.id = id;
         this.quantity = quantity;
         this.cart = cart;
+        this.product = product;
     }
 
     public int getId() {
@@ -47,5 +54,13 @@ public class CartItem {
 
     public void setCart(Cart cart) {
         this.cart = cart;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

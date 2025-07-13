@@ -22,7 +22,7 @@ public class User {
     private Role ruolo;
 
     @OneToOne(mappedBy = "user")
-    private Cart cart;
+    private Cart cart = new Cart();
 
     @OneToOne(mappedBy = "user")
     private Address address;

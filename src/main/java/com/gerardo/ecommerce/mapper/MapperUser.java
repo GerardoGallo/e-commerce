@@ -12,4 +12,12 @@ public class MapperUser {
         dtoOut.setEta(user.getEta());
         return dtoOut;
     }
+
+    public static User dtoOutToEntity(UserDtoOut dtoOut){
+        User entity = new User();
+        entity.setNome(dtoOut.getNome());
+        entity.setCognome(dtoOut.getCognome());
+        entity.setEta(dtoOut.getEta());
+        return entity;
+    }
 }

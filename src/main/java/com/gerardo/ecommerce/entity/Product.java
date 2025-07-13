@@ -15,7 +15,7 @@ public class Product {
     private int pezziDisponibili;
     private double prezzo;
     private String descrizione;
-    private int codeItem;
+    private int codeItem;//codice del prodotto
 
     @ManyToOne
     @JoinColumn(name = "category_id")

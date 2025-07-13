@@ -12,6 +12,12 @@ public class MapperCategory {
         return entity;
     }
 
+    public static Category dtoOutToEntity(CategoryDtoOut dtoOut) {
+        Category entity = new Category();
+        entity.setNome(dtoOut.getNome());
+        return entity;
+    }
+
     public static CategoryDtoOut entityToDtoOut(Category category) {
         CategoryDtoOut dtoOut = new CategoryDtoOut();
         dtoOut.setNome(category.getNome());

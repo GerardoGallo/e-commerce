@@ -10,6 +10,8 @@ import com.gerardo.ecommerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class ProductService {
 
@@ -18,6 +20,13 @@ public class ProductService {
 
     @Autowired
     private CategoryRepository categoryRepository;
+
+    public ProductDtoOut getProductById(int id) {
+        Product productById = productRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException(String.format("Prodotto con id %s non trovato", id)));
+
+        return MapperProduct.entityToDtoOut(productById);
+    }
 
     public ProductDtoOut createProduct(ProductDtoIn productDtoIn) {
         productRepository.findByCodeItem(productDtoIn.getCodeItem())
@@ -61,4 +70,6 @@ public class ProductService {
         productRepository.delete(product);
         return MapperProduct.entityToDtoOut(product);
     }
+
+
 }

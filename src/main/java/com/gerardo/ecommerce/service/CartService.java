@@ -82,8 +82,8 @@ public class CartService {
         }
         if (contains) {
             cartRepository.save(cart);
-        }else {
-            throw new RuntimeException(String.format("Prodotto con condice %s non trovato",codeItem));
+        } else {
+            throw new RuntimeException(String.format("Prodotto con condice %s non trovato", codeItem));
         }
         return MapperCart.entityToDtoOut(cart);
     }
@@ -92,9 +92,9 @@ public class CartService {
         User user = fetchAuthenticatedUser();
         for (CartItem c : user.getCart().getCartItem()) {
             if (c.getProduct().getCodeItem() == codeItem) {
-                if (c.getQuantity()>1){
-                    c.setQuantity(c.getQuantity()-1);
-                }else {
+                if (c.getQuantity() > 1) {
+                    c.setQuantity(c.getQuantity() - 1);
+                } else {
                     user.getCart().getCartItem().remove(c);
                 }
                 break;
@@ -131,4 +131,9 @@ public class CartService {
     }
 
 
+    public void emptyTheCart() {
+        User user = fetchAuthenticatedUser();
+        user.getCart().getCartItem().clear();
+        cartRepository.save(user.getCart());
+    }
 }

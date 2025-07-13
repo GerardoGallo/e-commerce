@@ -3,10 +3,13 @@ package com.gerardo.ecommerce.service;
 import com.gerardo.ecommerce.dto.in.CategoryDtoIn;
 import com.gerardo.ecommerce.dto.out.CategoryDtoOut;
 import com.gerardo.ecommerce.entity.Category;
+import com.gerardo.ecommerce.entity.Product;
 import com.gerardo.ecommerce.mapper.MapperCategory;
 import com.gerardo.ecommerce.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CategoryService {
@@ -44,5 +47,13 @@ public class CategoryService {
         }
         categoryRepository.delete(category);
         return MapperCategory.entityToDtoOut(category);
+    }
+
+    public List<CategoryDtoOut> findAllCategory() {
+        return MapperCategory.listEntityToListDtoOut(categoryRepository.findAll());
+    }
+
+    public List<Product> findProductByCategory(String categoryName){
+        return categoryRepository.findProductByCateogry(categoryName);
     }
 }

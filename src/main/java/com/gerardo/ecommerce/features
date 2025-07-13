@@ -28,9 +28,9 @@ Visualizzare le recensioni associate a un prodotto AVENDO GIà IL FINDBYID CHE R
 
 Category
 
-Elencare tutte le categorie di prodotto
+Elencare tutte le categorie FATTO
 
-Visualizzare i dettagli di una categoria e i prodotti associati
+Visualizzare i dettagli di una categoria e i prodotti associati RISOLVERE ERRORE
 
 Aggiungere/modificare/eliminare categorie (admin) FATTO, inoltre per quanto riguarda la delete, essa puo essere effettuata solo se nessuno prodotto è associato a quella categoria
 
@@ -44,7 +44,7 @@ Modificare la quantità di un prodotto nel carrello FATTO
 
 Rimuovere un prodotto dal carrello FATTO
 
-Svuotare il carrello
+Svuotare il carrello FATTO
 
 Wishlist (preferiti)
 

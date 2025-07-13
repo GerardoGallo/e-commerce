@@ -1,8 +1,12 @@
 package com.gerardo.ecommerce.mapper;
 
 import com.gerardo.ecommerce.dto.in.CategoryDtoIn;
+import com.gerardo.ecommerce.dto.out.CartDtoOut;
 import com.gerardo.ecommerce.dto.out.CategoryDtoOut;
 import com.gerardo.ecommerce.entity.Category;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class MapperCategory {
 
@@ -22,5 +26,9 @@ public class MapperCategory {
         CategoryDtoOut dtoOut = new CategoryDtoOut();
         dtoOut.setNome(category.getNome());
         return dtoOut;
+    }
+
+    public static List<CategoryDtoOut> listEntityToListDtoOut(List<Category> listCategory){
+        return listCategory.stream().map(MapperCategory::entityToDtoOut).collect(Collectors.toList());
     }
 }

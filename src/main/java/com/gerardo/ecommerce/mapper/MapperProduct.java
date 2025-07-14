@@ -1,10 +1,13 @@
 package com.gerardo.ecommerce.mapper;
 
 import com.gerardo.ecommerce.dto.in.ProductDtoIn;
+import com.gerardo.ecommerce.dto.in.ProductDtoInSpecification;
 import com.gerardo.ecommerce.dto.out.ProductDtoOut;
 import com.gerardo.ecommerce.entity.Product;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MapperProduct {
 
@@ -50,5 +53,9 @@ public class MapperProduct {
             dtoOut.setReview(MapperReview.listEntityToListDtoOut(newProduct.getReview()));
         }
         return dtoOut;
+    }
+
+    public static List<ProductDtoOut> listEntityToListDtoOut(List<Product> listEntity){
+        return listEntity.stream().map(MapperProduct::entityToDtoOut).collect(Collectors.toList());
     }
 }

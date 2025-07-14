@@ -12,6 +12,7 @@ import com.gerardo.ecommerce.repository.CartItemRepository;
 import com.gerardo.ecommerce.repository.CartRepository;
 import com.gerardo.ecommerce.repository.ProductRepository;
 import com.gerardo.ecommerce.repository.UserRepository;
+import com.gerardo.ecommerce.utility.UserUtility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -32,6 +33,9 @@ public class CartService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private UserUtility userUtility;
+
     public CartDtoOut additemToCart(CartItemDtoIn cartItemDtoIn) {
         CartItem cartItem = new CartItem();
         Product productByCode = productRepository.findByCodeItem(cartItemDtoIn.getProduct().getCodeItem())
@@ -40,8 +44,8 @@ public class CartService {
         cartItem.setProduct(productByCode);
         cartItem.setQuantity(1);
 
-        User user = fetchAuthenticatedUser();
-        Cart cart = cartRepository.findCartForUser(fetchAuthenticatedUser().getEmail());
+        User user = userUtility.fetchAuthenticatedUser();
+        Cart cart = cartRepository.findCartForUser(userUtility.fetchAuthenticatedUser().getEmail());
         if (cart == null) {
             cart = createCart();
         }
@@ -67,7 +71,7 @@ public class CartService {
     }
 
     public CartDtoOut updateQuantityOfAProduct(int codeItem) {
-        String email = getEmailOfUser();
+        String email = userUtility.getEmailOfUser();
         Cart cart = cartRepository.findCartForUser(email);
         if (cart == null) {
             throw new RuntimeException("Il carrello è nullo");
@@ -89,7 +93,7 @@ public class CartService {
     }
 
     public CartDtoOut deleteItemToCart(int codeItem) {
-        User user = fetchAuthenticatedUser();
+        User user = userUtility.fetchAuthenticatedUser();
         for (CartItem c : user.getCart().getCartItem()) {
             if (c.getProduct().getCodeItem() == codeItem) {
                 if (c.getQuantity() > 1) {
@@ -106,33 +110,16 @@ public class CartService {
 
     public Cart createCart() {
         Cart cart = new Cart();
-        cart.setUser(fetchAuthenticatedUser());
+        cart.setUser(userUtility.fetchAuthenticatedUser());
         return cart;
     }
 
-    //Il seguente metodo recupera la email dell utente che sta utilizzando l applicazione
-    public String getEmailOfUser() {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String email = "";
-        if (principal instanceof UserDetails) {
-            email = ((UserDetails) principal).getUsername();
-        }
-        return email;
-    }
-
     public CartDtoOut findCartOfAnUser() {
-        return MapperCart.entityToDtoOut(fetchAuthenticatedUser().getCart());
+        return MapperCart.entityToDtoOut(userUtility.fetchAuthenticatedUser().getCart());
     }
-
-    //recupera l utente che sta usando l applicazione
-    public User fetchAuthenticatedUser() {
-        return userRepository.findByEmail(getEmailOfUser())
-                .orElseThrow(() -> new RuntimeException("Utente non trovato"));
-    }
-
 
     public void emptyTheCart() {
-        User user = fetchAuthenticatedUser();
+        User user = userUtility.fetchAuthenticatedUser();
         user.getCart().getCartItem().clear();
         cartRepository.save(user.getCart());
     }

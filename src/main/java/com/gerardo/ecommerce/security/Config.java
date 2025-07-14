@@ -41,7 +41,12 @@ public class Config {
                 .roles("USER")
                 .build();
 
-        return new InMemoryUserDetailsManager(a, g, c);
+        UserDetails z = User.withUsername("z")
+                .password("{noop}z")
+                .roles("ADMIN")
+                .build();
+
+        return new InMemoryUserDetailsManager(a, g, c, z);
 
     }
 }

@@ -1,9 +1,11 @@
 package com.gerardo.ecommerce.mapper;
 
+import com.gerardo.ecommerce.dto.in.ReviewDtoIn;
 import com.gerardo.ecommerce.dto.out.ReviewDtoOut;
 import com.gerardo.ecommerce.entity.Review;
 import org.apache.catalina.mapper.Mapper;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,10 +16,10 @@ public class MapperReview {
         dtoOut.setVoto(review.getVoto());
         dtoOut.setCommento(review.getCommento());
         dtoOut.setData(review.getData());
-        if (review.getProduct() != null) {
+        /*if (review.getProduct() != null) {
             dtoOut.setProduct(MapperProduct.entityToDtoOut(review.getProduct()));
 
-        }
+        }*/
         if (review.getUser() != null) {
             dtoOut.setUser(MapperUser.entityToDtoOut(review.getUser()));
 
@@ -42,4 +44,13 @@ public class MapperReview {
     public static List<Review> ListDtoOutToListEntity(List<ReviewDtoOut> listReviewDtoOut) {
         return listReviewDtoOut.stream().map(MapperReview::dtoOutToEntity).collect(Collectors.toList());
     }
+
+    public static Review dtoInToEntity(ReviewDtoIn dtoIn) {
+        Review entity = new Review();
+        entity.setVoto(dtoIn.getVoto());
+        entity.setCommento(dtoIn.getCommento());
+        entity.setData(LocalDateTime.now());
+        return entity;
+    }
+
 }

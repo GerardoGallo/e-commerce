@@ -14,7 +14,7 @@ Aggiungere, modificare, eliminare indirizzi associati all’utente
 
 Product
 
-Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria, prezzo, ecc.)
+Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria, prezzo, ecc.) FATTO MA PER CONTROLLARE SE EFFETTIVAMENTE FUNZIONA DEVO COMPLETARE PRIMA ALCUNE FEATURES COME QUELLA DELLE REVIEW PER UN PRODOTTO
 
 Visualizzare i dettagli di un singolo prodotto FATTO
 
@@ -24,13 +24,12 @@ Modificare i dati di un prodotto esistente (admin) FATTO
 
 Eliminare un prodotto (admin) FATTO
 
-Visualizzare le recensioni associate a un prodotto AVENDO GIà IL FINDBYID CHE RECUPERA TUTTE LE INFORMAZIONI DEL PRODOTTO QUESTA FEATURES DOVREBBE ESSERE AUTOMATICAMENTE GIà IMPLEMENTATA, NEL MOMENTO IN CUI VERRà FATTA LA PARTE FROTN-END VEDREMO
 
 Category
 
 Elencare tutte le categorie FATTO
 
-Visualizzare i dettagli di una categoria e i prodotti associati RISOLVERE ERRORE
+Visualizzare i dettagli di una categoria e i prodotti associati FATTO
 
 Aggiungere/modificare/eliminare categorie (admin) FATTO, inoltre per quanto riguarda la delete, essa puo essere effettuata solo se nessuno prodotto è associato a quella categoria
 
@@ -46,7 +45,7 @@ Rimuovere un prodotto dal carrello FATTO
 
 Svuotare il carrello FATTO
 
-Wishlist (preferiti)
+Wishlist (preferiti)  CI PENSO IN FUTURO
 
 Order
 
@@ -68,11 +67,11 @@ Visualizzare lo stato del pagamento
 
 Review
 
-Aggiungere una recensione a un prodotto (solo utenti autenticati)
+Aggiungere una recensione a un prodotto (solo utenti autenticati) FATTO GESTIRE AL MASSIMO IN FUTORO IL FATTO CHE IL JSON CHE MI RESTITUISCE HA ALL INTERNO DELLA LISTA DI REVIEW L ATTRIBUTO PRODUCT SETTATO A NULL MA NON è UN PROBLEMA PER ORA
 
-Modificare o eliminare una recensione (solo autore o admin)
+Modificare o eliminare una recensione (solo autore o admin) FATTO MA CON STESSO "PROBLEMA" DELL ADD
 
-Visualizzare tutte le recensioni di un prodotto
+Visualizzare tutte le recensioni di un prodotto FATTO MA CON STESSO "PROBLEMA" DELL ADD
 
 
 

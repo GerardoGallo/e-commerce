@@ -1,7 +1,9 @@
 package com.gerardo.ecommerce.entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,11 +20,12 @@ public class User {
     @Column(unique = true)
     private String email;
     private String pwd;
+    @ElementCollection(fetch = FetchType.EAGER) // o LAZY a seconda dei casi
     @Enumerated(EnumType.STRING)
-    private Role ruolo;
+    private List<Role> roles = new ArrayList<>();
 
     @OneToOne(mappedBy = "user")
-    private Cart cart = new Cart();
+    private Cart cart;
 
     @OneToOne(mappedBy = "user")
     private Address address;
@@ -36,14 +39,14 @@ public class User {
     public User() {
     }
 
-    public User(int id, String nome, String cognome, int eta, String email, String pwd, Role ruolo, Cart cart, Address address, List<Order> order, List<Review> review) {
+    public User(int id, String nome, String cognome, int eta, String email, String pwd, List<Role> roles, Cart cart, Address address, List<Order> order, List<Review> review) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.eta = eta;
         this.email = email;
         this.pwd = pwd;
-        this.ruolo = ruolo;
+        this.roles = roles;
         this.cart = cart;
         this.address = address;
         this.order = order;
@@ -98,12 +101,12 @@ public class User {
         this.pwd = pwd;
     }
 
-    public Role getRuolo() {
-        return ruolo;
+    public List<Role> getRoles() {
+        return roles;
     }
 
-    public void setRuolo(Role ruolo) {
-        this.ruolo = ruolo;
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public Cart getCart() {

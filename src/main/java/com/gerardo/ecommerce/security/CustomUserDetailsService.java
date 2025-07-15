@@ -1,0 +1,33 @@
+package com.gerardo.ecommerce.security;
+
+import com.gerardo.ecommerce.entity.Role;
+import com.gerardo.ecommerce.entity.User;
+import com.gerardo.ecommerce.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class CustomUserDetailsService implements UserDetailsService {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User myUser = userRepository.findByEmail(username)
+                .orElseThrow(()->new RuntimeException(String.format("User con email %s non trovato",username)));
+        List<GrantedAuthority> authorities = new ArrayList<>();
+        for (Role s: myUser.getRoles()){
+            authorities.add(new SimpleGrantedAuthority("ROLE_"+s.name()));
+        }
+        return new org.springframework.security.core.userdetails.User(myUser.getEmail(), myUser.getPwd(), authorities);
+    }
+}

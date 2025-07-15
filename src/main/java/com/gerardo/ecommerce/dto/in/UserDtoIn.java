@@ -1,10 +1,18 @@
 package com.gerardo.ecommerce.dto.in;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class UserDtoIn {
 
+    @NotBlank
     private String nome;
+    @NotBlank
     private String cognome;
+    @NotBlank
     private String email;
+    @NotBlank
+    private String pwd;
+    @NotBlank
     private int eta;
 
     public UserDtoIn() {
@@ -32,6 +40,14 @@ public class UserDtoIn {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public int getEta() {

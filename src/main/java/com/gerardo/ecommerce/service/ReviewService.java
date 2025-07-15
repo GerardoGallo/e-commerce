@@ -79,7 +79,7 @@ public class ReviewService {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new RuntimeException(String.format("Review con id %s non trovata", reviewId)));
         User authenticatedUser = userUtility.fetchAuthenticatedUser();
-        if (review.getUser() != authenticatedUser && authenticatedUser.getRuolo() != Role.ADMIN) {
+        if (review.getUser() != authenticatedUser && !authenticatedUser.getRoles().contains(Role.ADMIN)) {
             throw new RuntimeException("Non puoi eliminare una review non scritta da te");
         }
         reviewRepository.delete(review);

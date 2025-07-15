@@ -11,6 +11,7 @@ public class MapperUser {
         dtoOut.setNome(user.getNome());
         dtoOut.setCognome(user.getCognome());
         dtoOut.setEta(user.getEta());
+        dtoOut.setListaRuoli(user.getRoles());
         return dtoOut;
     }
 

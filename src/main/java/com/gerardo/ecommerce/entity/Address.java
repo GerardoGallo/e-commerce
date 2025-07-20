@@ -22,6 +22,14 @@ public class Address {
     public Address() {
     }
 
+    public Address(String indirizzo, int nCivico, String nazionalita, String comune, String provincia) {
+        this.indirizzo = indirizzo;
+        this.nCivico = nCivico;
+        this.nazionalita = nazionalita;
+        this.comune = comune;
+        this.provincia = provincia;
+    }
+
     public Address(int id, String indirizzo, int nCivico, String nazionalita, String comune, String provincia, User user) {
         this.id = id;
         this.indirizzo = indirizzo;
@@ -31,6 +39,7 @@ public class Address {
         this.provincia = provincia;
         this.user = user;
     }
+
 
     public int getId() {
         return id;

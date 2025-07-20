@@ -10,6 +10,7 @@ public class UserDtoOut {
     private String cognome;
     private int eta;
     private List<Role> listaRuoli;
+    private AddressDtoOut address;
 
     public UserDtoOut() {
     }
@@ -44,5 +45,13 @@ public class UserDtoOut {
 
     public void setListaRuoli(List<Role> listaRuoli) {
         this.listaRuoli = listaRuoli;
+    }
+
+    public AddressDtoOut getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressDtoOut address) {
+        this.address = address;
     }
 }

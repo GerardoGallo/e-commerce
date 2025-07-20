@@ -14,14 +14,12 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@Profile("prod")
-public class EazyBankProdUsernamePwdAuthenticationProvider implements AuthenticationProvider {
+public class CustomdUsernamePwdAuthenticationProvider implements AuthenticationProvider {
 
     @Autowired
     private UserDetailsService userDetailsService;
     @Autowired
     private PasswordEncoder passwordEncoder;
-
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -32,7 +30,7 @@ public class EazyBankProdUsernamePwdAuthenticationProvider implements Authentica
         if (passwordEncoder.matches(pwd, userDetails.getPassword())) {
             //nel caso si volessero aggiungere altri controlli è possibile farlo qui
             // ad esempio si potrebbe controllare l eta ecc...
-            return new UsernamePasswordAuthenticationToken(username, pwd, userDetails.getAuthorities());
+            return new UsernamePasswordAuthenticationToken(userDetails, pwd, userDetails.getAuthorities());
         } else {
             throw new BadCredentialsException("invalid password");
         }

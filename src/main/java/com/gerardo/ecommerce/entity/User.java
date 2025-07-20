@@ -3,6 +3,7 @@ package com.gerardo.ecommerce.entity;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class User {
     private String nome;
     private String cognome;
     private int eta;
-
+    private LocalDateTime dataIscrizione;
     @Column(unique = true)
     private String email;
     private String pwd;
@@ -83,6 +84,14 @@ public class User {
 
     public void setEta(int eta) {
         this.eta = eta;
+    }
+
+    public LocalDateTime getDataIscrizione() {
+        return dataIscrizione;
+    }
+
+    public void setDataIscrizione(LocalDateTime dataIscrizione) {
+        this.dataIscrizione = dataIscrizione;
     }
 
     public String getEmail() {

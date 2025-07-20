@@ -5,5 +5,9 @@ ora c e da gestire gli endpoint e in seguito la parte di sicurezza
 le uniche entità rimaste da gestire solo quella dello user e quindi anche la parte di sicurezza
 e successivamente quello dell Order e del Payment
 
-Controllare per quanto riguarda la parte degli ordini nel momento in cui viene effettuato un ordine di un prodotto, la quantità
-di pezzi disponibili per quel prodotto dovrebbe diminuire
+Controllare per quanto riguarda la parte degli ordini nel momento in cui viene effettuato un ordine di un prodotto,
+la quantità di pezzi disponibili per quel prodotto dovrebbe diminuire
+
+
+RIVEDERE LE PARTI CHE RIGUARDANO L ORDER DATO CHE L ORDINE VIENE CREATO MA PER IL MOMENTO SEMPRE CON LO STESSO
+PAYMENT QUINDI RISOLVERE QUESTO E RISOLVERE ANCHE I DUE GETMAPPING DI ORDER

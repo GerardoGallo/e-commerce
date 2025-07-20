@@ -12,10 +12,11 @@ public class MapperUser {
         dtoOut.setCognome(user.getCognome());
         dtoOut.setEta(user.getEta());
         dtoOut.setListaRuoli(user.getRoles());
+        dtoOut.setAddress(MapperAddress.entityToDtoOut(user.getAddress()));
         return dtoOut;
     }
 
-    public static User dtoOutToEntity(UserDtoOut dtoOut){
+    public static User dtoOutToEntity(UserDtoOut dtoOut) {
         User entity = new User();
         entity.setNome(dtoOut.getNome());
         entity.setCognome(dtoOut.getCognome());
@@ -23,7 +24,7 @@ public class MapperUser {
         return entity;
     }
 
-    public static User dtoInToEntity(UserDtoIn dtoIn){
+    public static User dtoInToEntity(UserDtoIn dtoIn) {
         User entity = new User();
         entity.setNome(dtoIn.getNome());
         entity.setCognome(dtoIn.getCognome());

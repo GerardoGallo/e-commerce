@@ -16,7 +16,7 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     private StatoPagamento statoPagamento;
 
-    private LocalDateTime dataPagamento;
+    //private LocalDateTime dataPagamento;
 
     @OneToOne
     @JoinColumn(name = "order_id")
@@ -26,11 +26,10 @@ public class Payment {
     public Payment() {
     }
 
-    public Payment(int id, String metodo, StatoPagamento statoPagamento, LocalDateTime dataPagamento, Order order) {
+    public Payment(int id, String metodo, StatoPagamento statoPagamento, Order order) {
         this.id = id;
         this.metodo = metodo;
         this.statoPagamento = statoPagamento;
-        this.dataPagamento = dataPagamento;
         this.order = order;
     }
 
@@ -56,14 +55,6 @@ public class Payment {
 
     public void setStatoPagamento(StatoPagamento statoPagamento) {
         this.statoPagamento = statoPagamento;
-    }
-
-    public LocalDateTime getDataPagamento() {
-        return dataPagamento;
-    }
-
-    public void setDataPagamento(LocalDateTime dataPagamento) {
-        this.dataPagamento = dataPagamento;
     }
 
     public Order getOrder() {

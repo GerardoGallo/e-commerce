@@ -37,9 +37,10 @@ public class CartService {
     private UserUtility userUtility;
 
     public CartDtoOut additemToCart(CartItemDtoIn cartItemDtoIn) {
+
         CartItem cartItem = new CartItem();
         Product productByCode = productRepository.findByCodeItem(cartItemDtoIn.getProduct().getCodeItem())
-                .orElseThrow(() -> new RuntimeException(String.format("prodotto con id %s non trovato", cartItemDtoIn.getProduct().getCodeItem())));
+                .orElseThrow(() -> new RuntimeException(String.format("prodotto con id %d non trovato", cartItemDtoIn.getProduct().getCodeItem())));
 
         cartItem.setProduct(productByCode);
         cartItem.setQuantity(1);

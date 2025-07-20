@@ -6,6 +6,7 @@ import com.gerardo.ecommerce.repository.UserRepository;
 import com.gerardo.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,18 +16,22 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @GetMapping("/find-by-email/{email}")
-    private ResponseEntity<?> findByEmail(@PathVariable String email){
+    private ResponseEntity<UserDtoOut> findByEmail(@PathVariable String email){
         return ResponseEntity.ok(userService.findByEmail(email));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<UserDtoOut> register(@RequestBody UserDtoIn dtoIn){
-        return ResponseEntity.ok(userService.register(dtoIn));
+    @PutMapping("/modify-data-user/{email}")
+    private ResponseEntity<UserDtoOut> modifyDataUser(@RequestBody UserDtoIn dtoIn, @PathVariable String email){
+        return ResponseEntity.ok(userService.modifyDataUser(dtoIn, email));
     }
 
-    @GetMapping("/admin/a")
+
+    @GetMapping("/a")
     public String a(){
-        return "entrato";
+        return passwordEncoder.encode("password123");
     }
 }

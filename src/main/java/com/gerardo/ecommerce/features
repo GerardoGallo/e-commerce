@@ -1,12 +1,12 @@
 User
 
-Registrazione di un nuovo utente
+Registrazione di un nuovo utente  FATTO
 
-Login (autenticazione)
+Login (autenticazione) FATTO MA RIVEDERE
 
-Visualizzare i dettagli del profilo utente
+Visualizzare i dettagli del profilo utente FATTO
 
-Modificare i dati personali dell’utente
+Modificare i dati personali dell’utente IN PROGRESS //decidere quali campi puo aggiornare l utente
 
 Visualizzare gli ordini effettuati dall’utente
 
@@ -16,7 +16,7 @@ Product
 
 Elencare tutti i prodotti disponibili (con possibilità di filtro per categoria, prezzo, ecc.) FATTO MA PER CONTROLLARE SE EFFETTIVAMENTE FUNZIONA DEVO COMPLETARE PRIMA ALCUNE FEATURES COME QUELLA DELLE REVIEW PER UN PRODOTTO
 
-Visualizzare i dettagli di un singolo prodotto FATTO
+Visualizzare i dettagli di un singolo prodotto data la categoria FATTO
 
 Aggiungere un nuovo prodotto (funzionalità admin)  FATTO
 
@@ -49,11 +49,11 @@ Wishlist (preferiti)  CI PENSO IN FUTURO
 
 Order
 
-Creare un nuovo ordine a partire dal carrello
+Creare un nuovo ordine a partire dal carrello DA TESTARE
 
-Visualizzare i dettagli di un ordine specifico
+Visualizzare i dettagli di un ordine specifico IN PROGRESS
 
-Elencare tutti gli ordini di un utente
+Elencare tutti gli ordini di un utente IN PROGRESS
 
 Annullare un ordine (se consentito)
 
@@ -67,7 +67,7 @@ Visualizzare lo stato del pagamento
 
 Review
 
-Aggiungere una recensione a un prodotto (solo utenti autenticati) FATTO GESTIRE AL MASSIMO IN FUTORO IL FATTO CHE IL JSON CHE MI RESTITUISCE HA ALL INTERNO DELLA LISTA DI REVIEW L ATTRIBUTO PRODUCT SETTATO A NULL MA NON è UN PROBLEMA PER ORA
+Aggiungere una recensione a un prodotto (solo utenti autenticati) FATTO GESTIRE AL MASSIMO IN FUTORO IL FATTO CHE IL JSON CHE MI RESTITUISCE HA ALL INTERNO DELLA LISTA DI REVIEW L ATTRIBUTO PRODUCT SETTATO A NULL MA NON è UN PROBLEMA PER ORA. fare in modo che la review di un prodotto la possa fare solo chi il prodotto l ha acquistato
 
 Modificare o eliminare una recensione (solo autore o admin) FATTO MA CON STESSO "PROBLEMA" DELL ADD
 

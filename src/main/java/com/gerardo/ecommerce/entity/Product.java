@@ -3,6 +3,7 @@ package com.gerardo.ecommerce.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Product {
@@ -15,6 +16,7 @@ public class Product {
     private int pezziDisponibili;
     private double prezzo;
     private String descrizione;
+    @Column(unique = true)
     private int codeItem;//codice del prodotto
 
     @ManyToOne
@@ -93,5 +95,18 @@ public class Product {
 
     public void setReview(List<Review> review) {
         this.review = review;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return codeItem == product.codeItem;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(codeItem);
     }
 }

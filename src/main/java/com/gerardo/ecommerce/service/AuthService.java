@@ -4,7 +4,7 @@ import com.gerardo.ecommerce.dto.in.LoginDtoIn;
 import com.gerardo.ecommerce.dto.in.UserDtoIn;
 import com.gerardo.ecommerce.dto.out.LoginDtoOut;
 import com.gerardo.ecommerce.dto.out.UserDtoOut;
-import com.gerardo.ecommerce.entity.Role;
+import com.gerardo.ecommerce.enums.Role;
 import com.gerardo.ecommerce.entity.User;
 import com.gerardo.ecommerce.mapper.MapperUser;
 import com.gerardo.ecommerce.repository.UserRepository;

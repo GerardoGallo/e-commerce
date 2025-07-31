@@ -1,5 +1,6 @@
 package com.gerardo.ecommerce.dto.in;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -8,6 +9,7 @@ public class ProductDtoIn {
 
     @NotBlank
     private String nome;
+    @Min(value = 1,message = "Quando inserisci un nuovo prodotto, questo deve avere almeno 1 pezzo disponibile")
     private int pezziDisponibili;
     private double prezzo;
     private int codeItem;

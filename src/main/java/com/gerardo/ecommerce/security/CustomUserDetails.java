@@ -1,11 +1,10 @@
 package com.gerardo.ecommerce.security;
 
-import com.gerardo.ecommerce.entity.Role;
+import com.gerardo.ecommerce.enums.Role;
 import com.gerardo.ecommerce.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collection;

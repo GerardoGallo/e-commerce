@@ -1,6 +1,6 @@
 package com.gerardo.ecommerce.dto.out;
 
-import com.gerardo.ecommerce.entity.StatoPagamento;
+import com.gerardo.ecommerce.enums.StatoPagamento;
 
 public class PaymentDtoOut {
 

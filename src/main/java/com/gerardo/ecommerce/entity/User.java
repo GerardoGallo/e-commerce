@@ -1,6 +1,6 @@
 package com.gerardo.ecommerce.entity;
 
-import jakarta.annotation.Nullable;
+import com.gerardo.ecommerce.enums.Role;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

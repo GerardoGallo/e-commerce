@@ -88,7 +88,7 @@ public class CartService {
         if (contains) {
             cartRepository.save(cart);
         } else {
-            throw new RuntimeException(String.format("Prodotto con condice %s non trovato", codeItem));
+            throw new RuntimeException(String.format("Prodotto con condice %s non trovato nel carrello", codeItem));
         }
         return MapperCart.entityToDtoOut(cart);
     }

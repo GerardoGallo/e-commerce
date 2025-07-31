@@ -1,4 +1,4 @@
-package com.gerardo.ecommerce.entity;
+package com.gerardo.ecommerce.enums;
 
 public enum StatoPagamento {
 

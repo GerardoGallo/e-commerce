@@ -49,15 +49,15 @@ Wishlist (preferiti)  CI PENSO IN FUTURO
 
 Order
 
-Creare un nuovo ordine a partire dal carrello DA TESTARE
+Creare un nuovo ordine a partire dal carrello FATTO
 
-Visualizzare i dettagli di un ordine specifico IN PROGRESS
+Visualizzare i dettagli di un ordine specifico FATTO
 
-Elencare tutti gli ordini di un utente IN PROGRESS
+Elencare tutti gli ordini di un utente FATTO
 
-Annullare un ordine (se consentito)
+Annullare un ordine (se consentito) CI PENSO SE AGGIUNGERE QUESTA FEATURE
 
-Notifiche email/SMS dopo l’ordine
+Notifiche email/SMS dopo l’ordine IN PROGRESS
 
 Payment
 
@@ -74,6 +74,12 @@ Modificare o eliminare una recensione (solo autore o admin) FATTO MA CON STESSO 
 Visualizzare tutte le recensioni di un prodotto FATTO MA CON STESSO "PROBLEMA" DELL ADD
 
 
+Ecezioni
+
+Creare un controller advice per la gestione delle eccezioni
+
+
+IN SEGUITO SONO RIPORTATE LE FETETURES DA AGGIUNGERE
 
 Pannello Admin
 Dashboard con:

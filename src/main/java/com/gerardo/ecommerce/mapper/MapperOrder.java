@@ -11,7 +11,7 @@ public class MapperOrder {
     public static OrderDtoOut entityToDtoOut(Order entity) {
         OrderDtoOut dtoOut = new OrderDtoOut();
         dtoOut.setUser(MapperUser.entityToDtoOut(entity.getUser()));
-        dtoOut.setAddress(MapperAddress.entityToDtoOut(entity.getAddress()));
+        dtoOut.setDeliveryAddress(MapperAddress.entityToDtoOut(entity.getAddress()));
         dtoOut.setOrderitem(MapperOrderItem.listEntityToListDtoOut(entity.getOrderitem()));
         dtoOut.setDataOrdine(entity.getDataOrdine());
         dtoOut.setStatoOrdine(entity.getStatoOrdine());

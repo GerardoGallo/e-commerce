@@ -1,6 +1,6 @@
 package com.gerardo.ecommerce.dto.out;
 
-import com.gerardo.ecommerce.entity.*;
+import com.gerardo.ecommerce.enums.StatoOrdine;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -11,7 +11,7 @@ public class OrderDtoOut {
     private StatoOrdine statoOrdine;
     private double prezzoOrdine;
     private UserDtoOut user;
-    private AddressDtoOut address;
+    private AddressDtoOut deliveryAddress;
     private List<OrderItemDtoOut> orderitem;
     private PaymentDtoOut payment;
 
@@ -47,12 +47,12 @@ public class OrderDtoOut {
         this.user = user;
     }
 
-    public AddressDtoOut getAddress() {
-        return address;
+    public AddressDtoOut getDeliveryAddress() {
+        return deliveryAddress;
     }
 
-    public void setAddress(AddressDtoOut address) {
-        this.address = address;
+    public void setDeliveryAddress(AddressDtoOut deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
     }
 
     public List<OrderItemDtoOut> getOrderitem() {

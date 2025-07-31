@@ -1,5 +1,6 @@
 package com.gerardo.ecommerce.entity;
 
+import com.gerardo.ecommerce.enums.StatoOrdine;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

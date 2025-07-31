@@ -1,7 +1,5 @@
 package com.gerardo.ecommerce.dto.in;
 
-import com.gerardo.ecommerce.entity.StatoPagamento;
-
 public class PaymentDtoIn {
 
     private String metodo;//inteso come metodo di pagamento ,es. tipo di carta ecc

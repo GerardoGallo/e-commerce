@@ -1,8 +1,7 @@
 package com.gerardo.ecommerce.entity;
 
+import com.gerardo.ecommerce.enums.StatoPagamento;
 import jakarta.persistence.*;
-
-import java.time.LocalDateTime;
 
 @Entity
 public class Payment {

@@ -1,6 +1,6 @@
 package com.gerardo.ecommerce.dto.out;
 
-import com.gerardo.ecommerce.entity.Role;
+import com.gerardo.ecommerce.enums.Role;
 
 import java.util.List;
 

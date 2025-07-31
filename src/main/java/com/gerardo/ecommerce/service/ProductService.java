@@ -67,6 +67,15 @@ public class ProductService {
 
     }
 
+    public ProductDtoOut uodatePezziDisponibili(int codeItem) {
+        Product product = productRepository.findByCodeItem(codeItem)
+                .orElseThrow(() -> new RuntimeException("Prodotto non trovato"));
+
+        product.setPezziDisponibili(product.getPezziDisponibili() + 1);
+        Product save = productRepository.save(product);
+        return MapperProduct.entityToDtoOut(save);
+    }
+
     public ProductDtoOut deleteProduct(int codeItem) {
         Product product = productRepository.findByCodeItem(codeItem)
                 .orElseThrow(() -> new RuntimeException("Prodotto non trovato"));
@@ -88,4 +97,5 @@ public class ProductService {
         List<Product> findAll = productRepository.findAll(specification);
         return MapperProduct.listEntityToListDtoOut(findAll);
     }
+
 }

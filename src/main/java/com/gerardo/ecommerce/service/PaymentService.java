@@ -3,7 +3,7 @@ package com.gerardo.ecommerce.service;
 import com.gerardo.ecommerce.dto.in.PaymentDtoIn;
 import com.gerardo.ecommerce.dto.out.PaymentDtoOut;
 import com.gerardo.ecommerce.entity.Payment;
-import com.gerardo.ecommerce.entity.StatoPagamento;
+import com.gerardo.ecommerce.enums.StatoPagamento;
 import com.gerardo.ecommerce.mapper.MapperPayment;
 import com.gerardo.ecommerce.repository.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
